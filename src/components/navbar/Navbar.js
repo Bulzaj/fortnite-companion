@@ -1,10 +1,14 @@
-import AppBar from "@mui/material/AppBar";
-import Container from "@mui/material/Container";
+import { AppBar, Container, Toolbar, Typography } from "@mui/material";
+import Logotype from "./Logotype";
 
 const Navbar = function () {
   return (
     <AppBar position="static">
-      <Container></Container>
+      <Container maxWidth="xl">
+        <Toolbar>
+          <Logotype />
+        </Toolbar>
+      </Container>
     </AppBar>
   );
 };
