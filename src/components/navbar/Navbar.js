@@ -3,7 +3,7 @@ import Logotype from "./Logotype";
 
 const Navbar = function () {
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Container maxWidth="xl">
         <Toolbar>
           <Logotype />
