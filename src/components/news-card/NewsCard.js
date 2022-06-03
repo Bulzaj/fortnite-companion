@@ -28,6 +28,8 @@ const NewsCard = function (props) {
 
     return (
       <Tabs
+        variant="scrollable"
+        scrollButtons="auto"
         value={selectedTab}
         onChange={handleTabChange}
         aria-label={`tab-news-${gameTypeName
