@@ -9,12 +9,18 @@ const HomePage = function () {
   if (isLoading || !news) return <SpinnerCentered />;
 
   const btNews = news.br;
+  const creativeNews = news.creative;
+  const stwNews = news.stw;
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="lg">
       <Typography variant="h2">What's News</Typography>
-      <Stack>
-        <NewsCard news={btNews} gameTypeName="Battle Royale" />
+      <Stack gap={2}>
+        {btNews && <NewsCard news={btNews} gameTypeName="Battle Royale" />}
+        {creativeNews && (
+          <NewsCard news={creativeNews} gameTypeName="Creative" />
+        )}
+        {stwNews && <NewsCard news={stwNews} gameTypeName="Save The World" />}
       </Stack>
     </Container>
   );

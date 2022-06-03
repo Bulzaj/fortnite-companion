@@ -5,17 +5,29 @@ const NewsCardBody = function (props) {
 
   if (!img || !title || !body) return;
 
+  const renderBodyContent = function (img, title, body) {
+    return (
+      <>
+        <CardMedia component="img" image={img} />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {body}
+          </Typography>
+        </CardContent>
+      </>
+    );
+  };
+
+  if (!selectedTab && !index) {
+    return <Box>{renderBodyContent(img, title, body)}</Box>;
+  }
+
   return (
     <Box role="tabpanel" hidden={selectedTab !== index}>
-      <CardMedia component="img" image={img} />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {body}
-        </Typography>
-      </CardContent>
+      {renderBodyContent(img, title, body)}
     </Box>
   );
 };
